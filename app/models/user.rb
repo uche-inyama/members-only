@@ -17,4 +17,9 @@ class User < ApplicationRecord
       token = User.new_token
       self.remember_digest = User.digest(token.to_s)
     end
+
+    def remember
+        self.remember_token = User.new_token
+        update_attribute(:remember_digest, User.digest(remember_token.to_s))
+    end
 end
