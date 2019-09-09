@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :signed_in?, only: [:new, :create]
+  before_action :signed_in?, only: %i[new create]
   def new
     @post = Post.new
   end
@@ -7,7 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "Post created"
+      flash[:success] = 'Post created'
       redirect_to posts_path
     else
       render 'new'
