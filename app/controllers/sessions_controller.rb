@@ -7,6 +7,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password]) 
       log_in @user
+      remember @user
+      current_user=(@user)
+      debugger
     else                    
       render 'new'
     end
