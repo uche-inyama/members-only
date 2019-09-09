@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-    attr_accessor :remember_token
+  attr_accessor :remember_token
+
+  has_many :posts
   before_create :create_remember_digest
 
   has_secure_password
