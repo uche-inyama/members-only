@@ -21,5 +21,11 @@ class ApplicationController < ActionController::Base
             @current_user ||= User.find_by(remember_digest: remember_token)
         end
     end
+
+    def log_out
+        session.delete(:user_id)
+        cookies.delete(:remember_token)
+        @current_user = nil
+    end
     
 end
