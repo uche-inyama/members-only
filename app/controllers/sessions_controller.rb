@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user&.authenticate(params[:session][:password])
       log_in @user
       remember @user
-      current_user = @user
+      current_user=(@user)
       redirect_to posts_path
     else
       render 'new'
