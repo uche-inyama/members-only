@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       log_in @user
       remember @user
       current_user=(@user)
+      redirect_to posts_path
     else                    
       render 'new'
     end
