@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :signed_in?, only: [:new, :create] 
+  before_action :signed_in?, only: [:new, :create]
   def new
     @post = Post.new
   end
@@ -20,8 +20,7 @@ class PostsController < ApplicationController
 
   private
 
-    def post_params
-      params.require(:post).permit(:title, :body)
-    end
-
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
 end
