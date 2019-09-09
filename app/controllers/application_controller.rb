@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   def log_in(user)
     session[:user_id] = user.id
+    @current_user = user
   end
 
   def remember(user)
@@ -10,9 +11,7 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-  def current_user=(user)
-    @current_user = user
-  end
+  attr_writer :current_user
 
   def current_user
     if session[:user_id]
