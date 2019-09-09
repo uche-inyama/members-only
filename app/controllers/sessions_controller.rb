@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       log_in @user
       remember @user
       current_user=(@user)
-      debugger
     else                    
       render 'new'
     end
