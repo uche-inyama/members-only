@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-  attr_writer :current_user
+  def current_user=(user)
+    @current_user = user
+  end
 
   def current_user
     if session[:user_id]
