@@ -1,6 +1,6 @@
 # MEMBERS-ONLY
 
-This rails application IS an exclusive clubhouse where members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
+This rails application is an exclusive clubhouse where members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
 ## How to run members-only
 To run it, clone this repository locally, and run these commands on your terminal.
