@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  attr_writer :current_user
+
   def log_in(user)
     session[:user_id] = user.id
     @current_user = user
@@ -10,8 +12,6 @@ class ApplicationController < ActionController::Base
     user.remember
     cookies.permanent[:remember_token] = user.remember_token
   end
-
-  attr_writer :current_user
 
   def current_user
     if session[:user_id]
