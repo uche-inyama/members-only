@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module PostsHelper
-  def post_author(p)
-    if current_user
-      p.user.name
-    end
+  def post_author(post)
+    post.user.name if current_user
   end
 end
