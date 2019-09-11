@@ -1,7 +1,6 @@
 <% @posts.each do |p| %>
-<h3><%= p.title%></h3>
-<% if current_user %>
-<aside><%= p.user.name %></aside>
+    <h3><%= p.title%></h3>
+    <aside><%= post_author(p) %></aside>
+    <p><%= p.body %></p>
 <% end %>
-<p><%= p.body %></p>
-<% end %>
+
