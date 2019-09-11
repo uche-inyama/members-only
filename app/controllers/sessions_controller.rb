@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       remember @user
       redirect_to posts_path
     else
+      flash.now[:danger] = "Incorrect email or password"
       render 'new'
     end
   end

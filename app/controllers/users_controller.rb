@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to posts_path
     else
+      flash.now[:danger] = 'Unsuccessful Registration'
       render 'new'
     end
   end
